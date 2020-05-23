@@ -5,5 +5,5 @@ inputs:
     description: 'Auth token for NPM'
     required: true
 runs:
-  using: 'node13'
+  using: 'node12'
   main: 'dist/index.js'
