@@ -1,4 +1,4 @@
-name: 'Publish to NPM'
+name: 'NPM Publish'
 description: 'Publish a package to NPM'
 inputs:
   npm-token:
