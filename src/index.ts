@@ -1,6 +1,7 @@
 import libpub from "libnpmpublish";
 import * as fs from 'fs';
 import * as path from 'path';
+import * as core from '@actions/core';
 
 const main = async () => {
   const token = core.getInput("npm-token");

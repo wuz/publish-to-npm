@@ -61,40 +61,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var libnpmpublish_1 = __importDefault(require("libnpmpublish"));
 var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
-var dotenv_1 = require("dotenv");
-dotenv_1.config();
+var core = __importStar(require("@actions/core"));
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var npmPath, packageJson, err_1;
+    var token, npmPath, packageJson, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                npmPath = path.resolve(path.join(__dirname, "../../wuzcard/"));
+                token = core.getInput("npm-token");
+                npmPath = path.resolve(path.join(__dirname, "."));
                 packageJson = JSON.parse(fs.readFileSync(npmPath + "/package.json", 'utf-8'));
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
                 return [4 /*yield*/, libnpmpublish_1.default.publish(npmPath, packageJson, {
-                        token: process.env.AUTH_TOKEN,
+                        token: token,
                     })];
             case 2:
                 _a.sent();
+                console.log("Published!");
                 return [3 /*break*/, 4];
             case 3:
                 err_1 = _a.sent();
-                console.error(err_1);
+                console.error(err_1.message);
+                process.exit(1);
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }
     });
 }); };
 main();
-/*
-
-Todo:
-
-- get directory to publish
-- get env token
-- publish
-
-*/
 //# sourceMappingURL=index.js.map
