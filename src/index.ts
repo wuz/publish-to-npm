@@ -5,7 +5,8 @@ import * as core from '@actions/core';
 
 const main = async () => {
   const token = core.getInput("npm-token");
-  const npmPath = path.resolve(process.env.GITHUB_WORKSPACE);
+  const workingDir = process.env.GITHUB_WORKSPACE || '.';
+  const npmPath = path.resolve(workingDir);
   const packageJson = JSON.parse(fs.readFileSync(`${npmPath}/package.json`, 'utf-8'));
 
   try {

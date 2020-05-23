@@ -63,12 +63,13 @@ var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
 var core = __importStar(require("@actions/core"));
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var token, npmPath, packageJson, err_1;
+    var token, workingDir, npmPath, packageJson, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 token = core.getInput("npm-token");
-                npmPath = path.resolve(path.join(__dirname, "."));
+                workingDir = process.env.GITHUB_WORKSPACE || '.';
+                npmPath = path.resolve(workingDir);
                 packageJson = JSON.parse(fs.readFileSync(npmPath + "/package.json", 'utf-8'));
                 _a.label = 1;
             case 1:

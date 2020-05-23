@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tsc && rm -rf node_modules/ && yarn --production"
+    "build": "yarn && tsc && rm -rf node_modules/ && yarn --production"
   },
   "dependencies": {
     "@actions/core": "^1.2.4",
