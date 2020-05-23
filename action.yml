@@ -1,0 +1,9 @@
+name: 'Publish to NPM'
+description: 'Publish a package to NPM'
+inputs:
+  npm-token:
+    description: 'Auth token for NPM'
+    required: true
+runs:
+  using: 'node13'
+  main: 'dist/index.js'

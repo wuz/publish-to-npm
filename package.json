@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "ncc build dist/index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "libnpmpublish": "^3.0.1"
+  },
+  "devDependencies": {
+    "@npm/types": "^1.0.1",
+    "@types/node": "^14.0.5",
+    "@zeit/ncc": "^0.22.3"
+  }
+}
