@@ -3,7 +3,7 @@
     "build": "yarn && tsc && rm -rf node_modules/ && yarn --production"
   },
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "libnpmpublish": "^3.0.1"
   },
   "devDependencies": {
